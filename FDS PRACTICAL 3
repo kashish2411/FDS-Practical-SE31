@@ -1,0 +1,96 @@
+def removex(d):
+    lst=[]
+    for i in d:
+        if i not in lst:
+            lst.append(i)
+    return lst
+
+
+def inter(lst1,lst2):
+    lst3=[]
+    for val in lst1:
+        if val in lst2:
+            lst3.append(val)
+    return lst3
+
+def union(lst1,lst2):
+    lst3=lst1
+    for val in lst2:
+        if val not in lst3:
+            lst3.append(val)
+    return lst3
+def diff(list1,list2):
+    list3=[]
+    for val in list1:
+        if val not in list2:
+            list3.append(val)
+    return list3
+def symdiff(list1,list2):
+    list3=[]
+    D1=diff(list1,list2)
+    print("Difference between Cricket and Badminton is : ", D1)
+    D2=diff(list2,list1)
+    print("Difference between Badminton and Cricket  is : ", D2)
+    list3=union(D1,D2)
+    return list3
+SE = []
+n = int(input("Enter number of students in SE : "))
+print("Enter the names of students:")
+for i in range(0, n):
+    el = input()
+    SE.append(el)  
+print("Original list of students in SEComp : " + str(SE))
+
+Cricket = []
+n = int(input("Enter number of students who play cricket : "))
+print("Enter the names of students who play cricket  :")
+for i in range(0, n):
+    ele = input()
+    Cricket.append(ele)  
+Cricket=removex(Cricket)
+
+
+
+Football = []
+n = int(input("Enter no of students who play football : "))
+print("Enter the name of students who play football :")
+for i in range(0, n):
+    element = input()
+    Football.append(element) 
+
+Football=removex(Football)
+
+
+
+Badminton = []
+n = int(input("Enter no of students who play badminton : "))
+print("Enter the name of students who play badminton :")
+for i in range(0, n):
+    elements = input()
+    Badminton.append(elements)  
+
+Badminton=removex(Badminton)
+def Cricket_Bad(list1,list2):
+    list3=inter(list1,list2)
+    print("List of students who play both cricket and badminton is : ", list3)
+    return len(list3)
+
+def eCricket_Bad(list1,list2):
+    list3=symdiff(list1,list2)
+    print("List of students who play either cricket or badminton but not both is : ",list3)
+    return len(list3)
+
+def nCricket_n_Bad(list1,list2,list3):
+    list4=diff(list1,union(list2,list3))
+    print("List of students who play neither cricket nor badminton is : ",list4)
+    return len(list4)
+def CBnF(list1,list2,list3):
+    list4=diff(inter(list1,list2),list3)
+    print("List of students who play cricket and football but not badminton is : ",list4)
+    return len(list4)
+
+print("Number of students who play both cricket and badminton : ", Cricket_Bad(Cricket,Badminton))
+print("Number of students who play either cricket or badminton but not both : ", eCricket_Bad(Cricket, Badminton))
+print("Number of students who play neither cricket nor badminton : ", nCricket_n_Bad(SE,Cricket,Badminton))
+print("Number of students who play cricket and football but not badminton : ", CBnF(Cricket,Football,Badminton))
+        

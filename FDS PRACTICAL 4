@@ -1,0 +1,52 @@
+m=int(input('enter m'))
+n=int(input('enter n'))
+
+a=[]
+b=[]
+d=[]
+    
+for i in range(m):
+    col = []
+    for j in range(n):
+            num=int(input('enter the numbers'))
+            col.append(num)
+    a.append(col)
+print(a)
+
+for i in range(m):
+    col = []
+    for j in range(n):
+            num=int(input('enter the numbers'))
+            col.append(num)
+    b.append(col)
+print(b)
+for i in range(m):
+    col=[]
+    for j in range(n):
+      col.append(0)
+    d.append(col)
+def add():
+
+            for i in range (m):
+                for j in range(n):
+                        d[i][j]=a[i][j]+b[i][j]
+            for r in d:
+                print("The sum is",d)
+def sub():
+            for i in range (m):
+                for j in range(n):
+                        d[i][j]=a[i][j]-b[i][j]
+            for r in d:
+                print("the diff is",d)
+def multiply():
+        for i in range(len(a)):  
+            for j in range(len(b[0])): 
+                for k in range(len(b)):
+                    d[i][j]+=(a[i][k] *b[k][j]  )
+        for r in d:
+            print(d)
+
+ 
+add()      
+sub()
+multiply()

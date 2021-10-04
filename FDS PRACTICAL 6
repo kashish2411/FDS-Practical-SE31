@@ -112,7 +112,13 @@ def add(s1,s2):
         for element in row: 
             print(element, end ="    ") 
         print() 
-
+         
+  def transpose(matrix):
+    s = []
+    for i in matrix:
+        s.append([i[1],i[0],i[2]])
+        
+    return s
 
 
 c=sparse_matrix(matrix=a,m=m,n=n)
@@ -120,3 +126,9 @@ print("The First sparse matrix is",c)
 d=sparse_matrix(matrix=b,m=k,n=l)
 print("The Second sparse matrix is",d)
 add(c,d)
+y=transpose(a)
+print("Transpose of First matrix is",y)
+
+
+
+

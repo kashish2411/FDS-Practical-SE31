@@ -1,0 +1,59 @@
+s=input("Input a string \t")
+str=s.split(" ")
+print(str)
+strlist=[]
+temp=" "
+def length1(str):
+    c=0
+    for i in str:
+        c=c+1
+        return(c)
+def length():
+    max=length1(str[0])
+    for i in str:
+        l=length1(i)
+        if l>max:
+            max=l
+    print("the maximum length is of",i)
+def charfreq():
+    c=0
+    ch=input("enter the letter for which freq is to be found \t")
+    for i in s:
+        if (i==ch):
+            c=c+1
+    print("the frequenzy is",c)
+def frequenzy():
+        for j in str:
+            if j not in strlist:
+               strlist.append(j)
+               count=0
+               for i in range(len(str)):
+                 if j==str[i]:
+                   count+=1
+               print("The frequenzy of",j,count)
+def pal(temp):
+    for i in s:
+        temp=i+temp
+    print("the reversed word is",temp)
+    
+    if(s==s[::-1]):
+      print("The string is a palindrome")
+    else:
+      print("The string is not a palindrome")
+def subs():
+    
+    sub=input("the substring to be checked?")
+    if (sub in s):
+         print(f"The substring ' {sub}' is found")
+    else:
+        print("It isnt present")
+         
+                
+
+        
+l=length1(str)
+length()        
+frequenzy()
+p=pal(temp)
+charfreq()
+subs()

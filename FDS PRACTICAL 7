@@ -15,15 +15,16 @@ def linearsearch(a, k):
     return -1
   
     
-def sentinelsearch(arr,k):
-    arr.append(k)
-    index = 0
- 
-    while True:
-        if arr[index] == k: 
-            break
-        index = index+1
-    return index
+def sentinelsearch(lst, target):
+    size = len(lst)
+    lst.append(target)
+    i = 0
+    while(lst[i] != target):
+        i += 1
+    if(i == size):
+        return None
+    else:
+        return i
 def binarysearch(arr, x):
     low = 0
     high = len(arr)- 1
